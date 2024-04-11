@@ -33,16 +33,16 @@ For example, to find the MST using Prim's algorithm for the sample matrix:
 ```rust
 // In main.rs
 
-let weights = vec![
-  vec![0, 4, 0, 0, 0, 0, 0, 8],
-  vec![4, 0, 8, 0, 0, 0, 0, 11],
-  vec![0, 8, 0, 7, 0, 4, 0, 2],
-  vec![0, 0, 7, 0, 9, 14, 0, 10],
-  vec![0, 0, 0, 9, 0, 10, 2, 0],
-  vec![0, 0, 4, 14, 10, 0, 3, 6],
-  vec![0, 0, 0, 0, 2, 3, 0, 1],
-  vec![8, 11, 2, 10, 0, 6, 1, 0],
-];
+let graph: AdjacencyMatrix = AdjacencyMatrix::new(MatrixEdges(vec![
+    vec![0, 7, 1, 9, 0, 0, 0, 0],
+    vec![7, 0, 0, 0, 2, 4, 0, 0],
+    vec![1, 0, 0, 0, 3, 4, 1, 0],
+    vec![9, 0, 0, 0, 0, 5, 5, 0],
+    vec![0, 2, 3, 0, 0, 0, 0, 6],
+    vec![0, 4, 4, 5, 0, 0, 0, 6],
+    vec![0, 0, 1, 5, 0, 0, 0, 6],
+    vec![0, 0, 0, 0, 6, 6, 6, 0],
+]));
 
 let mst = prim(weights);
 
@@ -77,13 +77,13 @@ s0, v3 -> 9
 Kruscal solution
 
 ```text
-s,  v2 -> 1
+s0, v2 -> 1
 v2, v6 -> 1
 v1, v4 -> 2
 v2, v4 -> 3
 v1, v5 -> 4
 v3, v5 -> 5
-v4, t  -> 6
+v4, t7 -> 6
 total -> 22
 ```
 
